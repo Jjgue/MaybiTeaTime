@@ -1,0 +1,129 @@
+.page-header {
+  position: relative;
+  z-index: 100;
+  background-color: white;
+  width: 100%;
+}
+
+.delivery-container {
+  width: 100%;
+  min-height: 90vh;
+  padding: 0px 20px;
+  position: relative; /* This is the anchor for your circles */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: 
+    linear-gradient(rgba(241, 248, 233, 0.5), rgba(241, 248, 233, 0.5)),
+    url('imgs/matcha_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.delivery-content {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grab-card {
+  width: 400px;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: left;
+  background: white; 
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-image img {
+  width: 100%;
+  display: block;
+}
+
+.card-text {
+  padding: 15px;
+}
+
+.card-text h3 {
+  font-size: 16px;
+  margin-bottom: 8 px;
+}
+
+.card-text p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.grab-brand {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.swirl-bg-img {
+  position: fixed; 
+  top: 0;           /* Set to 0 to align to top-left corner */
+  left: 0;          /* Set to 0 to align to top-left corner */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;       /* Base layer above the matcha img */
+  pointer-events: none;
+  transform: none;  /* Remove any previous centering transforms */
+}
+
+.delivery-content {
+  position: relative; 
+  z-index: 10;      /* Keeps the map and card on top of everything */
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.manual-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;       /* Above swirl, below content */
+}
+
+.green-circle, .yellow-circle, .lgreen-circle {
+  opacity: 0.9;
+  /* Removed individual negative z-indexes that hide the circles */
+}
+
+.green-circle { background-color: #809028; }
+.yellow-circle { background-color: #d9a35a; }
+.lgreen-circle { background-color: #73822e; }
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+}
+.section-title {
+  font-family: 'Batangas', sans-serif; /* Using your defined font */
+  font-size: 60px;
+  color: #3d5a1e; /* Matching your matcha theme green */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  margin-bottom: 5px;
+  text-align: left;
+  
+}
+
+/* Ensure the map and card still look good */
+.location, .grab-card {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Optional: adds a nice lift */
+  border-radius: 8px;
+  overflow: hidden;
+}

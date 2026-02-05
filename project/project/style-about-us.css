@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Batangas.otf';
+  src: url('Font/Batangas.otf') format('opentype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5ffe7; 
+}
+
+.page-header {
+  background-color: #ffffff;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 10%; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(245, 255, 231, 0.5), rgba(245, 255, 231, 0.5)), 
+    url('imgs/matcha+swirl_bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; 
+  pointer-events: none;
+}
+
+.about-us-page {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+.about-main {
+  width: 100%;
+  height: 520px;
+  margin-top: 40px;
+  background: transparent;
+}
+
+.about-main-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.about-main-inner::before {
+  content: "";
+  position: absolute;
+  background-color: #d9a35a; 
+  opacity: 80%;
+  width: 50vw; 
+  height: 50vw;
+  max-width: 480px;
+  max-height: 480px;
+  border-radius: 50%;
+  top: 60%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.about-main-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
+
+.about-main-title {
+  position: absolute;
+  top: 45%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 3;
+}
+
+.about-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0; 
+  margin-top: -60px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background: transparent;
+}
+
+.about-content-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center; 
+  gap: 80px;
+  position: relative;
+  z-index: 2; 
+  background: transparent;
+}
+
+.about-left {
+  top: -35px;
+  width: 550px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5; 
+  background: transparent;
+}
+
+.about-product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+.about-right {
+  width: 590px;
+  background: transparent;
+}
+
+.about-text-block {
+  margin-bottom: 32px;
+}
+
+.about-text-block p {
+  margin: 0;
+  line-height: 24px;
+}
