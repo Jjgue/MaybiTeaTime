@@ -130,6 +130,7 @@ a {
   font-size: 130px; 
   color: #f1e4c3;
   margin-top: -45px; 
+  margin-bottom: 20px; 
   font-weight: bold;
 }
 
@@ -167,11 +168,12 @@ a {
 .drink-card:nth-child(1)::before { 
   background-color: #809028; 
   opacity: 80%;
-  width: 52vw; 
-  height: 52vw;
-  max-width: 450px;
-  max-height: 450px;
-  top: 75%;
+  width: 60vw; 
+  height: 60vw;
+  max-width: 455px;
+  max-height: 455px;
+  left: 45%;
+  top: 65%;
 }
 
 .drink-card:nth-child(2)::before { 
@@ -188,23 +190,25 @@ a {
 .drink-card:nth-child(3)::before { 
   background-color: #809028; 
   opacity: 80%;
-  width: 52vw; 
-  height: 52vw;
-  max-width: 450px;
-  max-height: 450px;
-  top: 75%; 
+   width: 60vw; 
+  height: 60vw;
+  max-width: 455px;
+  max-height: 455px;
+  left:60%;
+  top: 65%; 
 }
-.drink-card:nth-child(1) .drink-image { transform: rotate(8deg); }
-.drink-card:nth-child(3) .drink-image { transform: rotate(-8deg); }
+.drink-card:nth-child(1) .drink-image { transform: rotate(18deg); top:-15px; height: 100%; }
+.drink-card:nth-child(3) .drink-image { transform: rotate(-20deg); top:-10px; height: 100%; }
 
 .drink-image {
   width: 100%;
-  height: 450px; 
+  height: 440px; 
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
 }
 
 .drink-image img {
@@ -214,19 +218,40 @@ a {
   object-fit: contain;
   transform: scale(1.0);
 }
-
 .drink-card h3 {
   font-family: 'GowunB.ttf', serif;
-  font-size: 45px;
+  font-size: 60px;
   color: #fff6d6;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   position: absolute;
-  bottom: 60px;
+  bottom: 90px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  width: 100%;
+
+  display: flex;
+  flex-direction: column; /* Stacks them vertically */
+  align-items: center;    /* Keeps them centered */
+  
+  line-height: 0.8;       /* This pulls the words together vertically */
   pointer-events: none;
+}
+
+.drink-card:nth-child(1) h3 {
+  line-height: 0.9;  
+  text-align: left;
+}
+
+.drink-card:nth-child(2) h3 {
+  line-height: 0.9;  
+    text-align: center;
+     
+}
+
+.drink-card:nth-child(3) h3 {
+  line-height: 0.9;       
+   text-align: right;
+  left: 200px;
 }
 
 .drink-card a {
@@ -236,10 +261,24 @@ a {
   font-size: 14px;
   text-decoration: none;
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+}
+
+.drink-card:nth-child(1) a {
+  left: 100px; 
+}
+
+.drink-card:nth-child(2) a {
+  left: 50%;
+}
+
+.drink-card:nth-child(3) a {
+  left: auto;         /* This cancels out the 50% from the general rule */
+  right:100px;        /* Use a small number to push it closer to the right edge */
+  transform: none;    /* This removes the centering shift */
 }
 .gbunny{
  position: absolute;
@@ -251,6 +290,8 @@ a {
   left: 50%;
   margin-left: 350px; 
   transform: rotate(30deg);
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+
 }
 .ybunny {
   position: absolute;
@@ -262,6 +303,8 @@ a {
   left: 50%; 
   margin-left: -650px; 
   transform: rotate(-20deg);
+    filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+
 }
 .swirl-bg-img {
   position: fixed;
@@ -287,11 +330,25 @@ a {
 }
 
 .footer-container {
+  background-color: #ffffff;
+  /* This forces the white color to bleed out infinitely to the sides */
+  margin-right: -100vw;
+  margin-left: -100vw;
+  padding-right: 100vw;
+  padding-left: 100vw;
+  
+  /* Standard footer styling */
+  padding-top: 10px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Add this to ensure the trick doesn't create a massive scrollbar */
+html, body {
+  overflow-x: hidden;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 32px; 
+  position: relative;
 }
 
 .footer-text {
