@@ -1,3 +1,5 @@
+/* =========================== HEADER ================================== */
+
 
 .page-header {
   position: relative;
@@ -6,16 +8,18 @@
   width: 100%;
 }
 
+/* =========================== BACKGROUND ================================== */
+
 .delivery-container {
   width: 100%;
   min-height: 90vh;
   padding: 0px 20px;
-  position: relative; /* This is the anchor for your circles */
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: 
+  background-image:
     linear-gradient(rgba(241, 248, 233, 0.5), rgba(241, 248, 233, 0.5)),
     url('imgs/matcha_bg.jpg');
   background-size: cover;
@@ -23,19 +27,14 @@
   background-attachment: fixed;
 }
 
-.delivery-content {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+/* =========================== MAIND DESIGN ================================== */
 
 .grab-card {
   width: 400px;
   border-radius: 4px;
   overflow: hidden;
   text-align: left;
-  background: white; 
+  background: white;
 }
 
 .card-link {
@@ -53,7 +52,6 @@
 
 .card-text h3 {
   font-size: 16px;
-  margin-bottom: 8 px;
 }
 
 .card-text p {
@@ -69,41 +67,55 @@
 }
 
 .swirl-bg-img {
-  position: fixed; 
-  top: 0;           /* Set to 0 to align to top-left corner */
-  left: 0;          /* Set to 0 to align to top-left corner */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: 1;       /* Base layer above the matcha img */
+  z-index: 1;
   pointer-events: none;
-  transform: none;  /* Remove any previous centering transforms */
+  transform: none;
 }
 
 .delivery-content {
-  position: relative; 
-  z-index: 10;      
+  position: relative;
+  z-index: 10;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* =========================== STICKERS ================================== */
+
 
 .manual-circle {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 1;     
+  z-index: 1;
 }
 
-.green-circle, .yellow-circle, .lgreen-circle {
+.green-circle,
+.yellow-circle,
+.lgreen-circle {
   opacity: 0.9;
 }
 
-.green-circle { background-color: #809028; }
-.yellow-circle { background-color: #d9a35a; }
-.lgreen-circle { background-color: #73822e; }
+.green-circle {
+  background-color: #809028;
+}
+
+.yellow-circle {
+  background-color: #d9a35a;
+}
+
+.lgreen-circle {
+  background-color: #73822e;
+}
+
+/* =========================== FONT DESIGN ================================== */
 
 .content-wrapper {
   display: flex;
@@ -111,20 +123,21 @@
   align-items: flex-start;
   gap: 0px;
 }
+
 .section-title {
-  font-family: 'Batangas', sans-serif; 
+  font-family: 'Batangas', sans-serif;
   font-size: 60px;
-  color: #3d5a1e; 
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  color: #3d5a1e;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
   margin-bottom: 5px;
   text-align: left;
-  
+
 }
 
-.location, .grab-card {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+.location,
+.grab-card {
   border-radius: 8px;
   overflow: hidden;
-    filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
 
 }
