@@ -1,0 +1,333 @@
+/* =========================== GLOBAL ANIMATIONS & SCROLLBAR ================================== */
+
+/* Custom Matcha Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5ffe7; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #809028;
+    border-radius: 10px;
+    border: 2px solid #f5ffe7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3d5a1e; 
+}
+
+.main-content-wrapper img, 
+.drink-img, 
+.sticker img {
+    animation: softFadeIn 1.2s ease-out forwards;
+}
+
+@keyframes softFadeIn {
+    from { 
+        opacity: 0; 
+        filter: blur(10px); 
+        transform: scale(0.98);
+    }
+    to { 
+        opacity: 1; 
+        filter: blur(0); 
+        transform: scale(1);
+    }
+}
+
+
+/* =========================== MAIN DESIGN ================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #f5ffe7;
+}
+
+.page-header {
+  background-color: #ffffff;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.navigation-links ul li a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: color 0.3s ease; 
+    position: relative; /* Required for the line to position itself */
+    padding-bottom: 5px;
+}
+
+/* The actual underline snippet */
+.navigation-links ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5e7327; /* Matches your hover color */
+    transition: width 0.3s ease;
+}
+
+.navigation-links ul li a:hover::after {
+    width: 100%;
+}
+
+.navigation-links ul li a:hover { 
+    color: #5e7327; 
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 120vh;
+  background-image:
+    linear-gradient(rgba(245, 255, 231, 0.5), rgba(245, 255, 231, 0.5)),
+    url('imgs/matcha+swirl_bg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.about-us-page {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.about-main {
+  width: 100%;
+  height: 520px;
+  margin-top: 20px;
+}
+
+.about-main-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.about-main-inner::before {
+  content: "";
+  position: absolute;
+  background-color: #d9a35a;
+  opacity: 80%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 480px;
+  max-height: 480px;
+  border-radius: 50%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.about-main-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(1deg);
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+}
+
+.about-main-title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 3;
+}
+
+.about-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+  margin-top: -60px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.about-content-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.about-left {
+  top: -35px;
+  width: 550px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+  background: transparent;
+}
+
+.about-product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+}
+
+.about-right {
+  width: 590px;
+  background: transparent;
+}
+
+.about-text-block {
+  margin-bottom: 32px;
+}
+
+.about-text-block p,
+.about-text-block b {
+  font-family: 'GowunB.ttf';
+  margin: 0;
+  line-height: 24px;
+  text-align: justify;
+}
+
+/* =========================== STICKERS ================================== */
+
+.sticker {
+    position: absolute;
+  width: 120px;
+  bottom: 10%;
+  right: 10%;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.sticker img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+
+}
+
+.manual-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.green-circle,
+.lgreen-circle {
+  opacity: 0.7;
+}
+
+.green-circle {
+  background-color: #809028;
+}
+
+.lgreen-circle {
+  background-color: #73822e;
+}
+
+.photo_bg {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  top: 450px;
+  left: 100px;
+  width: 670px;
+  height: 680px;
+}
+
+.photo_bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+  transition: transform 0.25s ease-out;
+
+}
+
+/* This part makes the transition smooth */
+.about-product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0px 15px 5px rgba(0, 0, 0, 0.4));
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* This part triggers the zoom (scale) on hover */
+.about-product-image:hover img {
+  transform: scale(1.02) rotate(-0.5deg);
+}
+/* Apply this to the individual cards */
+.drink.fade-in-slide {
+    opacity: 0;
+    animation: fadeInSlide 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+/* Parallax elements smooth transition */
+.sticker, .manual-circle, .photo_bg img {
+    transition: transform 0.2s ease-out;
+}
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-btn {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.tab-btn.selected {
+    transform: scale(1.05);
+}
+
+.about-text-block {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-text-block.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
