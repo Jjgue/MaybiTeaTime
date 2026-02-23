@@ -4,30 +4,7 @@
 <head>
     <title>Menu - Maybi Tea Time</title>
     <link rel="stylesheet" href="style-menu.css" />
-    <style>
-        .sticker,
-        .manual-circle,
-        .yellow-circle,
-        .lgreen-circle {
-            transform: translate(var(--move-x, 0px), var(--move-y, 0px));
-            transition: transform 0.3s ease-out;
-        }
-
-        .drink {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .drink:hover {
-            transform: translateY(-10px) scale(1.02);
-            z-index: 10;
-        }
-
-        .disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-    </style>
+  
 </head>
 
 <body>
@@ -37,7 +14,7 @@
 
             <!-- logo + title -->
             <div class="logo">
-                <a href="../index.html">
+                <a href="homepage.html">
                     <img src="imgs/logo.png" alt="Maybi Tea Time Logo">
                 </a>
                 <h1 class="website_name">Maybi Tea Time</h1>
@@ -217,7 +194,7 @@
                         <!-- Sunset Kapi -->
                         <div class="drink" data-tab="drinks" data-category="tea-coffee" data-name="Sunset Kapi"
                             data-img="imgs/sunset kapi.png" data-price="₱180" data-serving="16 fluid oz."
-                            data-tags="Coffee,Orange" data-details="null" onclick="openModal(this)">
+                            data-tags="Coffee,Fruity" data-details="Citrus and fruity|Refreshing and chocolatey goodness|Perfect for your caffeine and fruity fix" onclick="openModal(this)">
                             <div class="drink-display"><!-- img-drink, p-price, img-icon -->
                                 <div class="drink-img-container"><!-- p-tag -->
                                     <div class="drink-bg-square"></div>
@@ -231,7 +208,7 @@
                             </div>
                             <div class="drink-tag-container"><!-- p-tag -->
                                 <p class="drink-tag">Coffee</p>
-                                <p class="drink-tag">Orange</p>
+                                <p class="drink-tag">Fruity</p>
                             </div>
                         </div>
                         <!-- Fallen Leaf (Chai) -->

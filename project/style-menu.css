@@ -735,3 +735,25 @@ img[src*="dch"] {
     opacity: 0.5;
     pointer-events: none;
 }
+ .sticker,
+        .manual-circle,
+        .yellow-circle,
+        .lgreen-circle {
+            transform: translate(var(--move-x, 0px), var(--move-y, 0px));
+            transition: transform 0.3s ease-out;
+        }
+
+        .drink {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .drink:hover {
+            transform: translateY(-10px) scale(1.02);
+            z-index: 10;
+        }
+
+        .disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
