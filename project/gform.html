@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maybi Tea Time</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-pick-deliv.css" />
+</head>
+
+<body>
+
+  <!-- header -->
+  <header class="page-header">
+    <div class="header">
+
+      <!-- logo + title -->
+      <div class="logo">
+        <a href="../index.html">
+          <img src="imgs/logo.png" alt="Maybi Tea Time Logo">
+        </a>
+        <h1 class="website_name">Maybi Tea Time</h1>
+      </div>
+
+      <!-- navigation + socials -->
+      <div class="navigation">
+        <nav class="navigation-links">
+          <ul>
+           <li><a href="about-us.html">About Us</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="pick-deliv.html">Pickup & Delivery</a></li>
+            <li><a id="dynamic-order-link" href="gform.html">Order Forms</a></li>
+          </ul>
+        </nav>
+        <a id="logout-btn" href="#" onclick="logout()" title="Logout Admin">⏻</a>
+
+        <div class="social-logos">
+          <a href="https://www.facebook.com/profile.php?id=61578109740675">
+            <img src="imgs/fb-logo.png" alt="Facebook Logo">
+          </a>
+          <a
+            href="https://www.instagram.com/maybi.teatime?fbclid=IwY2xjawPn6PdleHRuA2FlbQIxMABicmlkETE2cDkyMW5iRER4dkl1cXFUc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoL5w6PuKo4bYKZsgn6D9Ki1OuNWIhgllt84PSgcO02Qok9ah8phPU5ki0Fc_aem_iumOZ_03KtHtGBk9ERJl7Q">
+            <img src="imgs/ig-logo.png" alt="Instagram Logo">
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- pickup & delivery  -->
+
+  <main class="delivery-container">
+    <img src="imgs/swirl_bg.png" class="swirl-bg-img" alt="">
+    <div class="manual-circle green-circle" style="width: 500px; height: 500px; top: -10%; left: -20%;"></div>
+    <div class="manual-circle lgreen-circle" style="width: 500px; height: 500px; top: 10%; left: 80%;"></div>
+    <div class="manual-circle yellow-circle" style="width: 500px; height: 500px; top: 60%; left: 30%;"></div>
+    
+    <div class="form-wrapper">
+        <iframe 
+          id="main-embed"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSeCMFS0zMItk7-7tfKTyEPtZwgT9g32GbvhqK0gIWd0FilabQ/viewform?embedded=true" 
+          height="500" 
+          frameborder="0" 
+          marginheight="0" 
+          top= "1000px"
+          marginwidth="0">Loading…</iframe>
+          
+    </div>
+</main>
+  <!-- footer -->
+  <footer class="footer-container">
+    <div class="footer">
+      <div class="footer-text">
+        <p>&copy; 2026 Maybi Tea Time. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+<style>
+.delivery-container {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically centers content */
+  min-height: 100vh; /* Takes up the full screen height */
+  padding: 50px 20px;
+  overflow: hidden;
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  width: 90%;
+  max-width: 600px; /* The container size */
+  height: 500px;    /* The container height */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Clips the oversized iframe */
+}
+
+/* Ensure the iframe fills the wrapper */
+#main-embed {
+  /* Step 1: Make the iframe huge so scaling it down looks normal */
+  width: 142%;  /* (1 / 0.7 scale) * 100% */
+  height: 142%; /* (1 / 0.7 scale) * 100% */
+  
+  /* Step 2: Scale it down (0.7 makes it 70% size) */
+  transform: scale(0.7); 
+  
+  /* Step 3: Ensure it scales from the top-left corner */
+  transform-origin: 0 0; 
+  
+  border: none;
+}
+
+.manual-circle {
+  z-index: 1; 
+  position: absolute; /* Ensures they stay behind the form */
+}
+
+.swirl-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+}
+</style>
+</html>
