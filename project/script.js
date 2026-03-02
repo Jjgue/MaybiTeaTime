@@ -270,8 +270,6 @@ function logout() {
     localStorage.removeItem("userRole"); 
     
     let currentPath = window.location.pathname;
-
-    if (currentPath.includes("/project/")) {
         window.location.href = "../index.html";
-    } 
+    
 }
