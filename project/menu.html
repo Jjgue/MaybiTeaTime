@@ -520,11 +520,10 @@
         });
 
         function logout() {
-            localStorage.removeItem("userRole");
-
-    let currentPath = window.location.pathname;
-    window.location.href = "../index.html";
-        }
+    localStorage.removeItem("userRole");
+    
+    window.location.replace("../index.html");
+}
     </script>
 
 </body>

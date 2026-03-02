@@ -268,8 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function logout() {
     localStorage.removeItem("userRole");
-
-    let currentPath = window.location.pathname;
-    window.location.href = "../index.html";
-
+    
+    window.location.replace("../index.html");
 }
