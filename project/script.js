@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Maybi Tea Time Script Active");
 
-    // --- 1. GLOBAL: STICKY HEADER ---
     const header = document.querySelector('.page-header');
     if (header) {
         const handleHeaderScroll = () => {
@@ -20,17 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
         handleHeaderScroll();
     }
 
-    // --- 2. GLOBAL: ENHANCED PARALLAX (Noticeable but Clamped) ---
-    // Added specific check for matcha3 and other stickers
     const parallaxElements = document.querySelectorAll('.sticker, .manual-circle, .photo_bg img, .gbunny, .ybunny');
 
     if (parallaxElements.length > 0) {
         const initialStates = new Map();
         parallaxElements.forEach(el => {
-            // Ensure they are visible
             el.style.opacity = "1";
             el.style.display = "block";
-            // Smooth gliding transition
+        
             el.style.transition = "transform 0.8s cubic-bezier(0.15, 0.83, 0.66, 1)";
 
             const style = window.getComputedStyle(el);
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const mouseX = e.clientX - window.innerWidth / 2;
             const mouseY = e.clientY - window.innerHeight / 2;
 
-            // ADJUSTED VALUES FOR MORE MOVEMENT
             const slowness = 60;
             const limit = 45;
 
@@ -49,25 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 let moveX = mouseX / slowness;
                 let moveY = mouseY / slowness;
 
-                // Clamping to prevent elements from going off-screen
                 moveX = Math.max(-limit, Math.min(limit, moveX));
                 moveY = Math.max(-limit, Math.min(limit, moveY));
 
-                // Preserve existing rotations (vital for Sugar Bunnies)
                 const baseTransform = initialStates.get(el);
                 el.style.transform = `translate(${moveX}px, ${moveY}px) ${baseTransform}`;
             });
         });
     }
 
-    // --- 4. ABOUT PAGE: SCROLL REVEAL ---
     const textBlocks = document.querySelectorAll('.about-text-block');
     if (textBlocks.length > 0) {
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Fallback styles if class is not defined in CSS
                     entry.target.style.opacity = "1";
                     entry.target.style.transform = "translateY(0)";
                     revealObserver.unobserve(entry.target);
@@ -198,7 +189,6 @@ window.openModal = function (name) {
     document.getElementById('modalTitle').innerText = item.name;
     document.getElementById('modalServing').innerText = item.serving;
 
-    // UPDATE: Wrap the price in a styled span
     document.getElementById('modalPrice').innerHTML = `<span class="modal-price-tag">${item.price}</span>`;
 
     document.getElementById('modalImg').src = item.img;
