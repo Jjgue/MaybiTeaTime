@@ -2,106 +2,245 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maybi Tea Time</title>
-  <link rel="stylesheet" href="project/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Maybi Tea Time</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-pick-deliv.css" />
+    <style>
+        .login-box {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            min-height: 500px;
+            z-index: 10;
+            position: relative;
+            animation: fadeInBox 0.8s ease-out;
+        }
+
+        @keyframes fadeInBox {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .delivery-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+            background-image: linear-gradient(rgba(241, 248, 233, 0.5), rgba(241, 248, 233, 0.5)), url('imgs/matcha_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .login-image-side {
+            flex: 1.2;
+            background: #73822E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .login-image-side img {
+            width: 80%;
+            max-width: 450px;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+            transform: scale(1.4);
+            z-index: 3;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: scale(1.4) translateY(0px); }
+            50% { transform: scale(1.4) translateY(-15px); }
+            100% { transform: scale(1.4) translateY(0px); }
+        }
+
+        .login-form-side {
+            flex: 1.5;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: visible; 
+        }
+
+        .login-btn {
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            background: #dfb313;
+            color: white;
+            width: 80%;
+            align-self: center;
+        }
+
+        .login-btn:hover {
+            background: #c29d11;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(223, 179, 19, 0.4);
+        }
+
+        .admin-fieldset {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .fade-in-section {
+            animation: slideUp 0.4s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        input[type="password"] {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .back-link:hover {
+            color: #333;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
+    <main class="delivery-container" style="min-height: 80vh; display: flex; align-items: center;">
+        <img src="imgs/swirl_bg.png" class="swirl-bg-img" alt="">
 
-  <!-- header -->
-  <header class="page-header">
-    <div class="header">
+    <div class="manual-circle green-circle" style="width: 500px; height: 500px; top: -10%; left: -20%;"></div>
 
-      <!-- logo + title -->
-      <div class="logo">
-        <a href="index.html">
-          <img src="project/imgs/logo.png" alt="Maybi Tea Time Logo">
-        </a>
-        <h1 class="website_name">Maybi Tea Time</h1>
-      </div>
+    <div class="manual-circle lgreen-circle" style="width: 500px; height: 500px; top: 10%; left: 80%;"></div>
 
-      <!-- navigation + socials -->
-      <div class="navigation">
-        <nav class="navigation-links">
-          <ul>
-            <li><a href="project/about-us.html">About Us</a></li>
-            <li><a href="project/menu.html">Menu</a></li>
-            <li><a href="project/pick-deliv.html">Pickup & Delivery</a></li>
-            <li><a href="https://forms.gle/kooaSJA2suD9U1pb8">Order Forms</a></li>
-          </ul>
-        </nav>
+    <div class="manual-circle yellow-circle" style="width: 500px; height: 500px; top: 60%; left: 30%;"></div>
 
-        <div class="social-logos">
-          <a href="https://www.facebook.com/profile.php?id=61578109740675">
-            <img src="project/imgs/fb-logo.png" alt="Facebook Logo">
-          </a>
-          <a
-            href="https://www.instagram.com/maybi.teatime?fbclid=IwY2xjawPn6PdleHRuA2FlbQIxMABicmlkETE2cDkyMW5iRER4dkl1cXFUc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoL5w6PuKo4bYKZsgn6D9Ki1OuNWIhgllt84PSgcO02Qok9ah8phPU5ki0Fc_aem_iumOZ_03KtHtGBk9ERJl7Q">
-            <img src="project/imgs/ig-logo.png" alt="Instagram Logo">
-          </a>
+        <div class="login-box">
+            <div class="login-image-side">
+                <img src="imgs/logo_trans.png" alt="Maybi Logo Large">
+            </div>
+
+            <div class="login-form-side">
+                <h2 class="section-title"
+                    style="margin-bottom: 0; line-height: 1.1; width: 100%; position: relative; height: 260px; text-align: center; z-index: 100;">
+                    <span
+                        style="font-size: 18px; color: #898985; font-weight: normal; display: block; position: relative; left: -105px; top: 60px; margin-bottom: 0px;">
+                        Welcome To
+                    </span>
+
+                    <span
+                        style="font-size: 120px; font-weight: bold; position: absolute; left: -90px; top: 40px; white-space: nowrap; z-index: 101; pointer-events: none; color: #d89a2f;">
+                        Maybi
+                    </span>
+
+                    <span
+                        style="font-size: 100px; font-weight: bold; position: absolute; left: 0px; top: 130px; white-space: nowrap; z-index: 101; pointer-events: none;">
+                        <span style="color: #61482c;">Tea</span>
+                        <span style="color: #0e3500;">Time</span>
+                    </span>
+                </h2>
+
+                <p style="color: #666; margin-top: 0px; margin-bottom: 30px; position: relative; z-index: 1;">
+                    Choose how you want to proceed
+                </p>
+
+                <div id="roleSelection" class="fade-in-section">
+                    <button class="login-btn" onclick="goToCustomer()">Customer View</button>
+                    <button class="login-btn" style="background: #555;" onclick="showAdminLogin()">Admin Access</button>
+                </div>
+
+                <div id="adminSection" style="display: none;">
+                    <div class="admin-fieldset">
+                        <label for="adminPassword" style="display: block; margin-bottom: 10px; font-weight: bold;">Admin Password</label>
+                        <input id="adminPassword" type="password" placeholder="••••••••" />
+                        <button class="login-btn" onclick="checkAdminPassword()">Continue</button>
+                        <p id="errorMessage" style="color: red; font-size: 14px; margin-top: 10px;"></p>
+                        <span class="back-link" onclick="goBack()">← Back to selection</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </main>
 
-      </div>
+    <script>
+        function goToCustomer() {
+            localStorage.setItem("userRole", "Customer");
+            window.location.href = "../homep.html";
+        }
 
-    </div>
-  </header>
+        function showAdminLogin() {
+            const roleDiv = document.getElementById("roleSelection");
+            const adminDiv = document.getElementById("adminSection");
+            roleDiv.style.display = "none";
+            adminDiv.style.display = "block";
+            adminDiv.classList.add("fade-in-section");
+            document.getElementById("errorMessage").innerText = "";
+            document.getElementById("adminPassword").value = "";
+            document.getElementById("adminPassword").focus();
+        }
 
-  <!-- main -->
-  <main>
-    <section class="main">
+        function goBack() {
+            const roleDiv = document.getElementById("roleSelection");
+            const adminDiv = document.getElementById("adminSection");
+            adminDiv.style.display = "none";
+            roleDiv.style.display = "block";
+            roleDiv.classList.add("fade-in-section");
+        }
 
-      <img src="project/imgs/swirl_bg.png" class="swirl-bg-img">
-      <div class="main-text">
-        <img class="gbunny" src="project/imgs/green_bunny.png">
-        <img class="ybunny" src="project/imgs/yellow_bunny.png">
-        <h2>
-          <span style="color:#73822E"> Matcha </span>
-          <span style="color:#a37f43"> Coffee </span>
-          <span style="color:#0e3500"> & Tea</span>
-        </h2>
-        <p style="color:#fff6d6;">Blends for you</p>
-      </div>
-
-      <div class="featured-drinks" id="card-container">
-        <div class="drink-card fade-in-slide" style="animation-delay: 0.1s">
-          <div class="drink-image">
-            <img src="project/imgs/kuneho's sunrise.png" alt="Kuneho's Sunrise">
-          </div>
-          <h3>Kuneho’s Sunrise</h3>
-          <a class="more" href="project/menu.html">See more</a>
-        </div>
-
-        <div class="drink-card fade-in-slide" style="animation-delay: 0.2s">
-          <div class="drink-image">
-            <img src="project/imgs/midnight earl.png" alt="Midnight Earl">
-          </div>
-          <h3>Midnight Earl</h3>
-          <a class="more" href="project/menu.html">See more</a>
-        </div>
-
-        <div class="drink-card fade-in-slide" style="animation-delay: 0.3s">
-          <div class="drink-image">
-            <img src="project/imgs/fallen leaf.png" alt="Fallen Leaf">
-          </div>
-          <h3>Fallen Leaf</h3>
-          <a class="more" href="project/menu.html">See more</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- footer -->
-  <footer class="footer-container">
-    <div class="footer">
-      <div class="footer-text">
-        <p>&copy; 2026 Maybi Tea Time. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <script src="project/script.js"></script>
-
+        function checkAdminPassword() {
+            var password = document.getElementById("adminPassword").value;
+            if (password === "M@ybeTeaTime1234!") {
+                localStorage.setItem("userRole", "Admin");
+                window.location.href = "../index.html";
+            } else {
+                document.getElementById("errorMessage").innerText = "Incorrect password.";
+            }
+        }
+    </script>
 </body>
 
 </html>
