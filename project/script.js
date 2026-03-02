@@ -272,8 +272,8 @@ function logout() {
     let currentPath = window.location.pathname;
 
     if (currentPath.includes("/project/")) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     } else {
-        window.location.href = "project/login.html";
+        window.location.href = "../index.html";
     }
 }
