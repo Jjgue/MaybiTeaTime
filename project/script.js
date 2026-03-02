@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. GLOBAL: ENHANCED PARALLAX (Noticeable but Clamped) ---
     // Added specific check for matcha3 and other stickers
     const parallaxElements = document.querySelectorAll('.sticker, .manual-circle, .photo_bg img, .gbunny, .ybunny');
-    
+
     if (parallaxElements.length > 0) {
         const initialStates = new Map();
         parallaxElements.forEach(el => {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.display = "block";
             // Smooth gliding transition
             el.style.transition = "transform 0.8s cubic-bezier(0.15, 0.83, 0.66, 1)";
-            
+
             const style = window.getComputedStyle(el);
             initialStates.set(el, style.transform === 'none' ? '' : style.transform);
         });
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const mouseY = e.clientY - window.innerHeight / 2;
 
             // ADJUSTED VALUES FOR MORE MOVEMENT
-            const slowness = 60; 
-            const limit = 45;    
+            const slowness = 60;
+            const limit = 45;
 
             parallaxElements.forEach((el) => {
                 let moveX = mouseX / slowness;
@@ -102,39 +102,39 @@ function initMenu() {
     }
 }
 
-window.switchTab = function(tab) {
+window.switchTab = function (tab) {
     currentTab = tab;
     currentCategory = 'all';
 
     const tabDrinks = document.getElementById('tab-drinks');
     const tabBunnies = document.getElementById('tab-bunnies');
-    
-    if(tabDrinks) tabDrinks.classList.toggle('selected', tab === 'drinks');
-    if(tabBunnies) tabBunnies.classList.toggle('selected', tab === 'bunnies');
+
+    if (tabDrinks) tabDrinks.classList.toggle('selected', tab === 'drinks');
+    if (tabBunnies) tabBunnies.classList.toggle('selected', tab === 'bunnies');
 
     renderCategories();
     renderCards();
     resetSlider();
 };
 
-window.renderCategories = function() {
+window.renderCategories = function () {
     const container = document.getElementById('category-container');
-    if(!container || !window.menuData) return;
-    
+    if (!container || !window.menuData) return;
+
     container.innerHTML = menuData[currentTab].categories.map(cat =>
         `<button class="category-btn ${cat === currentCategory ? 'active' : ''}" 
          onclick="filterItems('${cat}', this)">${cat.charAt(0).toUpperCase() + cat.slice(1)}</button>`
     ).join('');
 };
 
-window.renderCards = function() {
+window.renderCards = function () {
     const container = document.getElementById('card-container');
-    if(!container || !window.menuData) return;
-    
+    if (!container || !window.menuData) return;
+
     container.innerHTML = menuData[currentTab].items.map((item, index) => {
         const customClass = item.name.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase();
         const delay = index * 0.05;
-        
+
         return `
             <div class="drink fade-in-slide" 
                  style="animation-delay: ${delay}s" 
@@ -160,7 +160,7 @@ window.renderCards = function() {
     }).join('');
 };
 
-window.filterItems = function(category, element) {
+window.filterItems = function (category, element) {
     currentCategory = category;
     const buttons = document.querySelectorAll('.category-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -168,7 +168,7 @@ window.filterItems = function(category, element) {
     searchDrinks();
 };
 
-window.searchDrinks = function() {
+window.searchDrinks = function () {
     const searchInput = document.getElementById('drinkSearch');
     const filter = searchInput ? searchInput.value.toLowerCase() : "";
     const cards = document.querySelectorAll('.drink');
@@ -178,7 +178,7 @@ window.searchDrinks = function() {
         const cardCat = card.getAttribute('data-category');
         const matchesSearch = title.includes(filter);
         const matchesCat = (currentCategory === 'all' || cardCat === currentCategory);
-        
+
         if (matchesSearch && matchesCat) {
             card.style.display = 'flex';
             card.style.animationDelay = `${index * 0.03}s`;
@@ -189,7 +189,7 @@ window.searchDrinks = function() {
     resetSlider();
 };
 
-window.openModal = function(name) {
+window.openModal = function (name) {
     if (!window.menuData) return;
     const item = menuData[currentTab].items.find(i => i.name === name);
     if (!item) return;
@@ -197,10 +197,10 @@ window.openModal = function(name) {
     document.getElementById('favBadge').style.display = item.favorite ? 'flex' : 'none';
     document.getElementById('modalTitle').innerText = item.name;
     document.getElementById('modalServing').innerText = item.serving;
-    
+
     // UPDATE: Wrap the price in a styled span
     document.getElementById('modalPrice').innerHTML = `<span class="modal-price-tag">${item.price}</span>`;
-    
+
     document.getElementById('modalImg').src = item.img;
     document.getElementById('modalBulletPoints').innerHTML = item.details.map(d => `<li>${d}</li>`).join('');
     document.getElementById('modalTags').innerHTML = item.tags.map(t => `<p class="drink-tag">${t}</p>`).join('');
@@ -210,15 +210,15 @@ window.openModal = function(name) {
     document.body.style.overflow = 'hidden';
 };
 
-window.closeModal = function() {
+window.closeModal = function () {
     const modal = document.getElementById('drinkModal');
     if (modal) modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 };
 
-window.moveSlider = function(direction) {
+window.moveSlider = function (direction) {
     const visibleCards = Array.from(document.querySelectorAll('.drink')).filter(c => c.style.display !== 'none');
-    const scrollAmount = 260; 
+    const scrollAmount = 260;
     const maxIndex = Math.max(0, visibleCards.length - 3);
 
     currentIndex = Math.min(Math.max(currentIndex + direction, 0), maxIndex);
@@ -229,20 +229,20 @@ window.moveSlider = function(direction) {
     updateNavButtons(visibleCards.length);
 };
 
-window.resetSlider = function() {
+window.resetSlider = function () {
     currentIndex = 0;
     const container = document.getElementById('card-container');
-    if(container) container.style.transform = `translateX(0px)`;
+    if (container) container.style.transform = `translateX(0px)`;
     const visibleCount = Array.from(document.querySelectorAll('.drink')).filter(c => c.style.display !== 'none').length;
     updateNavButtons(visibleCount);
 };
 
-window.updateNavButtons = function(visibleCount) {
+window.updateNavButtons = function (visibleCount) {
     const maxIndex = Math.max(0, visibleCount - 3);
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
-    if(prevBtn) prevBtn.classList.toggle('disabled', currentIndex <= 0);
-    if(nextBtn) nextBtn.classList.toggle('disabled', currentIndex >= maxIndex || visibleCount <= 3);
+    if (prevBtn) prevBtn.classList.toggle('disabled', currentIndex <= 0);
+    if (nextBtn) nextBtn.classList.toggle('disabled', currentIndex >= maxIndex || visibleCount <= 3);
 };
 
 window.addEventListener('click', (e) => {
@@ -253,11 +253,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const role = localStorage.getItem("userRole");
     const logoutBtn = document.getElementById("logout-btn");
     const orderLink = document.getElementById("dynamic-order-link");
-if (logoutBtn) {
+    if (logoutBtn) {
         logoutBtn.style.display = "inline-block";
     }
     if (role === "Admin") {
-        
+
         if (orderLink) {
             orderLink.href = "https://docs.google.com/spreadsheets/d/1v2rpI7-mNNsEyfjyEDtx2pToKPXi5k7z-bmaknw7sKw/edit?usp=sharing";
             orderLink.innerText = "Admin Spreadsheet";
@@ -267,9 +267,9 @@ if (logoutBtn) {
 });
 
 function logout() {
-    localStorage.removeItem("userRole"); 
-    
+    localStorage.removeItem("userRole");
+
     let currentPath = window.location.pathname;
-        window.location.href = "../index.html";
-    
+    window.location.href = "../index.html";
+
 }

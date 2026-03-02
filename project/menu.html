@@ -521,7 +521,9 @@
 
         function logout() {
             localStorage.removeItem("userRole");
-            window.location.href = "../index.html";
+
+    let currentPath = window.location.pathname;
+    window.location.href = "../index.html";
         }
     </script>
 
