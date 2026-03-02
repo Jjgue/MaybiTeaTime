@@ -42,7 +42,7 @@
             align-items: center;
             position: relative;
             box-sizing: border-box;
-            background-image: linear-gradient(rgba(241, 248, 233, 0.5), rgba(241, 248, 233, 0.5)), url('imgs/matcha_bg.jpg');
+            background-image: linear-gradient(rgba(241, 248, 233, 0.5), rgba(241, 248, 233, 0.5)), url('project/imgs/matcha_bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -235,7 +235,7 @@
             var password = document.getElementById("adminPassword").value;
             if (password === "M@ybeTeaTime1234!") {
                 localStorage.setItem("userRole", "Admin");
-                window.location.href = "../index.html";
+                window.location.href = "project/homep.html";
             } else {
                 document.getElementById("errorMessage").innerText = "Incorrect password.";
             }
