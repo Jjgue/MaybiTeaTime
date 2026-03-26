@@ -665,7 +665,9 @@ img[src*="dch"] {
     transform: scale(1.1) translateY(2px) rotate(10deg) !important;
 }
 
-
+img[src*="Iced_coffee"] {
+    transform: scale(1.5)!important;
+}
 
 .nav-btn.disabled {
     background: #d2c5bd;
