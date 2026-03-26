@@ -68,30 +68,7 @@
                 <button id="prev-btn" class="nav-btn prev" onclick="moveSlider(-1)">&#10094;</button>
                 <div id="slider-window">
                     <div id="card-container">
-                        <!-- MATCHA -->
-
-                         <!-- ICED COFFEE NEW -->
-
-                        <div class="drink" data-tab="bunnies" data-category="matcha"
-                            data-name="Iced coffee bunny" data-img="imgs/Iced_coffee.png" data-price="₱300/pc"
-                            data-serving="6pcs: ₱1800 | 12pcs: ₱3500" data-tags="Matcha,Strawberry"
-                            data-details="Iced coffee | Bunny | Limited edition" onclick="openModal(this)">
-                            <div class="drink-display"><!-- img-drink, p-price, img-icon -->
-                                <div class="drink-img-container">
-                                    <div class="drink-bg-square"></div>
-                                    <img class="drink-img" src="imgs/Iced_coffee.png">
-                                </div>
-                                <p class="price">₱300/pc</p>
-                            </div>
-                            <div class="drink-desc"><!-- p-title, p-serving, img-plus -->
-                                <p class="title">Iced coffee bunny</p>
-                                <p class="serving">6pcs: ₱1800 | 12pcs: ₱3500</p>
-                            </div>
-                            <div class="drink-tag-container"><!-- p-tag -->
-                                <p class="drink-tag">Cream</p>
-                                <p class="drink-tag">Mango</p>
-                            </div>
-                        </div>
+                        <!-- PASTE MATCHA DRINKS HERE -->                     
                         <!-- Matcha MapleBunny -->
 
                         <!-- Puts it into a category -->
@@ -287,7 +264,7 @@
                                 <p class="drink-tag">Ice</p>
                             </div>
                         </div>
-
+                    <!-- PASTE BUNNIES HERE -->    
                         <!-- White Chocolate Strawberry Matcha -->
 
                         <div class="drink" data-tab="bunnies" data-category="matcha"
@@ -437,7 +414,9 @@
             renderCategories();
             searchDrinks();
         }
-
+        
+//CATEGORIES HERE
+//CATEGORIES HERE
         function renderCategories() {
             const categories = {
                 drinks: ["all", "matcha", "hojicha", "tea-coffee"],
@@ -447,6 +426,8 @@
             document.getElementById("category-container").innerHTML =
                 cats.map(c => `<button class="category-btn ${c === currentCategory ? 'active' : ''}" onclick="filterItems('${c}',this)">${c.charAt(0).toUpperCase() + c.slice(1)}</button>`).join("");
         }
+//CATEGORIES HERE
+//CATEGORIES HERE
 
         function filterItems(cat, el) {
             currentCategory = cat;
